@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  ctbrec-kasm:
+    image: 'jafea7/ctbrec-kasm' # Change to your desired image
+    ports:
+        - '6901:6901' # Set host port as necessary. eg. '33901:6901'
+    environment:
+        - VNC_PW=mypassword   # Change as desired
+        - TZ=America/Chicago  # Set to required TZ
+    shm_size: '512m' # Change per your needs. eg. '512m', '1gb', '2gb'
+    volumes:
+      - "./config:/home/kasm-user/ctbrec/config" # CTBRec config location
+      - "./media:/home/kasm-user/media"          # Location of recorded media
+    restart: "unless-stopped"

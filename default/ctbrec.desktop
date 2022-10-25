@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=CTBRec
+Comment=
+Exec=/home/kasm-user/ctbrec/ctbrec.sh
+Icon=/home/kasm-user/ctbrec/ctbrec.png
+Path=/home/kasm-user/ctbrec
+Terminal=false
+StartupNotify=false
