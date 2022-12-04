@@ -12,7 +12,7 @@ CTBRec is a streaming media recorder.
 version: '3.3'
 services:
   ctbrec-kasm:
-    image: 'jafea7ctbrec-kasm' # Change to your desired image
+    image: 'jafea7ctbrec-kasm:amd64_4.7.16' # Change to your desired image
     ports:
         - '6901:6901' # Set host port as necessary. eg. '33901:6901'
     environment:

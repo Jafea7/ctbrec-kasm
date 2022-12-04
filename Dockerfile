@@ -18,9 +18,10 @@ RUN apt-get update \
     && cp $HOME/ctbrec/splash.png /usr/share/extra/backgrounds/bg_default.png \
     && cp -p $HOME/ctbrec/ctbrec.desktop /$HOME/Desktop/ \
     && chmod +x $HOME/Desktop/ctbrec.desktop \
-    && chown 1000:1000 $HOME/Desktop/ctbrec.desktop \
+    && chown 1000:1000 $HOME/Desktop/ctbrec.desktop
+
 # Start CTBRec when container starts
-    && echo "/usr/bin/desktop_ready && cd /home/kasm-user/ctbrec && ./ctbrec.sh &" > $STARTUPDIR/custom_startup.sh \
+RUN echo "/usr/bin/desktop_ready && cd /home/kasm-user/ctbrec && ./ctbrec.sh &" > $STARTUPDIR/custom_startup.sh \
     && chmod +x $STARTUPDIR/custom_startup.sh
 
 ######### End Customizations ###########
