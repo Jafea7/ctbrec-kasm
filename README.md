@@ -27,6 +27,8 @@ services:
 
 CTBRec will start when the container starts, access via your browser at `https://<ip>:<port>` with username `kasm_user`, password `whatever you set above`.
 
+**NOTE:** CTBRec **will not** auto-start for the ARM64 version.
+
 For example, using the settings in the `docker-compose.yml` above for a container on the local machine:
 
 `https://127.0.0.1:6901`
