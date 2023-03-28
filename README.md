@@ -14,10 +14,10 @@ services:
   ctbrec-kasm:
     image: 'jafea7ctbrec-kasm:amd64_5.0.1' # Change to your desired image
     ports:
-        - '6901:6901' # Set host port as necessary. eg. '33901:6901'
+      - '6901:6901' # Set host port as necessary. eg. '33901:6901'
     environment:
-        - VNC_PW=mypassword  # Change as desired
-        - TZ=America/Chicago # Set to required TZ
+      - VNC_PW=mypassword  # Change as desired
+      - TZ=America/Chicago # Set to required TZ
     shm_size: '1gb'
     volumes:
       - "./config:/home/kasm-user/ctbrec/config" # CTBRec config location
