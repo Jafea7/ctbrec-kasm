@@ -25,7 +25,7 @@
   "disabledSites": [
     "LiveJasmin"
   ],
-  "downloadFilename": "${modelSanitizedName}_${siteSanitizedName}_${localDateTime(yyyyMMdd-HHmmss)}",
+  "downloadFilename": "$sanitize(${modelName})_$sanitize(${siteName})_$format(${localDateTime},yyyyMMdd-HHmmss)",
   "eventHandlers": [],
   "eventsSuspended": false,
   "fastScrollSpeed": true,
@@ -56,7 +56,7 @@
   "maximumResolution": 8640,
   "maximumResolutionPlayer": 0,
   "mediaPlayer": "/usr/bin/mpv",
-  "mediaPlayerParams": "",
+  "mediaPlayerParams": "--autofit=1280",
   "mfcBaseUrl": "https://www.myfreecams.com",
   "mfcDisabledModelsTableColumns": [],
   "mfcModelsTableColumnIds": [],
@@ -86,23 +86,26 @@
   "postProcessors": [
     {
       "type": "ctbrec.recorder.postprocessing.Remux",
+      "enabled": true,
       "config": {
-        "ffmpeg.args": "-c:v copy -c:a copy -bsf:a aac_adtstoasc -movflags faststart -f mp4",
-        "file.ext": "mp4"
+        "ffmpeg.args": "-c:v copy -c:a copy -y -f matroska",
+        "file.ext": "mkv"
       }
     },
     {
       "type": "ctbrec.recorder.postprocessing.Rename",
+      "enabled": true,
       "config": {
-        "filename.template": "${modelSanitizedName}_${siteSanitizedName}_${localDateTime(yyyyMMdd-HHmmss)}.${fileSuffix}"
+        "filename.template": "$sanitize(${modelName})_$sanitize(${siteName})_$format(${localDateTime},yyyyMMdd-HHmmss).${fileSuffix}"
       }
     },
     {
       "type": "ctbrec.recorder.postprocessing.CreateContactSheet",
+      "enabled": true,
       "config": {
         "padding": "2",
         "burn_in_timestamp": "true",
-        "filename": "${modelSanitizedName}_${siteSanitizedName}_${localDateTime(yyyyMMdd-HHmmss)}.jpg",
+        "filename": "$sanitize(${modelName})_$sanitize(${siteName})_$format(${localDateTime},yyyyMMdd-HHmmss).jpg",
         "columns": "8",
         "background": "0x333333",
         "total_size": "2560",
@@ -123,7 +126,7 @@
   "recordLaterTableSortColumn": "",
   "recordLaterTableSortType": "",
   "recordSingleFile": false,
-  "recordUntilDefaultDurationInMinutes": 30,
+  "recordUntilDefaultDurationInMinutes": 1440,
   "recordedModelsPerSite": false,
   "recordedModelsTableColumnOrder": [],
   "recordedModelsTableColumnVisibility": {},
@@ -151,6 +154,7 @@
   "splitRecordingsAfterSecs": 0,
   "splitRecordingsBiggerThanBytes": 0,
   "splitStrategy": "DONT",
+  "startMinimized": false,
   "startTab": "Recording",
   "streamatePassword": "",
   "streamateUsername": "",
@@ -158,6 +162,7 @@
   "stripchatUseXhamster": false,
   "stripchatUsername": "",
   "tabOrder": [],
+  "tabsSortable": true,
   "thumbWidth": 180,
   "timeoutRecordingEndingAt": "00:00",
   "timeoutRecordingStartingAt": "00:00",
