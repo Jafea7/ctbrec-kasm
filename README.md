@@ -27,6 +27,8 @@ services:
 
 CTBRec will start when the container starts, (there's a delay of 10 seconds), access via your browser at `https://<ip>:<port>` with username `kasm_user`, password `whatever you set above`.
 
+Occassionally the CTBRec interface will not open even though it is running, open a Terminal, `ps ax | grep java` to get the running process, then `kill <pid>` to terminate.  You can then run CTBRec via the desktop icon.
+
 **NOTE:** CTBRec **will not** auto-start for the ARM64 container.
 
 For example, using the settings in the `docker-compose.yml` above for a container on the local machine:
